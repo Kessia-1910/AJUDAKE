@@ -11,9 +11,6 @@
             background-color: #f4f4f4;
             padding: 50px;
         }
-        h1 {
-            color: #333;
-        }
         .container {
             max-width: 400px;
             margin: auto;
@@ -51,27 +48,35 @@
     </div>
 
     <div class="container">
+        <h2>Cadastre-se</h2>
+        <input type="text" id="newUser" placeholder="Usuário">
+        <input type="password" id="newPass" placeholder="Senha">
+        <button onclick="register()">Cadastrar</button>
+    </div>
+
+    <div class="container">
         <h2>Pesquisar</h2>
         <input type="text" id="searchBox" placeholder="Digite para pesquisar...">
         <button onclick="search()">Pesquisar</button>
     </div>
 
     <script>
+        let users = {}; // Simples armazenamento de usuários (não persistente)
+
+        function register() {
+            let newUser = document.getElementById("newUser").value;
+            let newPass = document.getElementById("newPass").value;
+
+            if (newUser && newPass) {
+                users[newUser] = newPass;
+                alert("Usuário cadastrado com sucesso!");
+            } else {
+                alert("Preencha todos os campos!");
+            }
+        }
+
         function login() {
             let user = document.getElementById("username").value;
             let pass = document.getElementById("password").value;
             
-            if (user === "admin" && pass === "1234") {
-                alert("Login bem-sucedido!");
-            } else {
-                alert("Usuário ou senha inválidos.");
-            }
-        }
-
-        function search() {
-            let query = document.getElementById("searchBox").value;
-            alert("Você pesquisou por: " + query);
-        }
-    </script>
-</body>
-</html>
+            if (users
