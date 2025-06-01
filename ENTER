@@ -23,3 +23,27 @@
     <p>Este é um exemplo básico de uma página HTML.</p>	
 </corpo>	
 </html>
+
+<form id="loginForm">
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" required>
+    
+    <label for="password">Senha:</label>
+    <input type="password" id="password" required>
+    
+    <button type="submit">Entrar</button>
+</form>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        
+        if (user === "admin" && pass === "1234") {
+            alert("Login bem-sucedido!");
+        } else {
+            alert("Usuário ou senha inválidos.");
+        }
+    });
+</script>
