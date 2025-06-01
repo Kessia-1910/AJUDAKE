@@ -89,8 +89,3 @@
             let pass = document.getElementById("password").value;
             
             if (users
-        function login() {
-            let user = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
-            
-            if (users
